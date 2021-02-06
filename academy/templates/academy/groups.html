@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>G R O U P S</title>
+</head>
+<body>
+<h1>Groups:</h1>
+    {% for group in groups %}
+    <div>
+        <h2>{{ group.course }}</h2>
+        <p>Lecturer: <b>{{ group.teacher.first_name }} {{ group.teacher.last_name}}, {{ group.teacher.email }}</b> </p>
+        <p>Students:
+            {% for student in group.students %}
+                <p><b>{{ student.first_name }} {{ student.last_name }} ({{ student.email }})</b>
+            {% endfor %}
+    </div>
+    {% endfor %}
+</body>
+</html>
